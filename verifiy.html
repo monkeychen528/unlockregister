@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <script src="./unlockgesture.js"></script>
+    <style>
+        .myWrap{
+            background-color: brown;
+            margin: 0 auto;
+            width: 100%;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #canvas{
+            margin: 0 auto;
+            display: block;
+        }
+        section{
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        .swipe{
+            background-color: rgb(25, 128, 25);
+            height: 60px;
+            border-radius: 12px;
+            width: 100%;
+            position: relative;
+        }
+         
+        #scrollBall {
+            background-color: rgba(125,125,125,0.7);
+            width: 50px;
+            height: 60px;
+            position: relative;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .text{
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(10, 10, 10,0.8);
+            text-shadow: 1px 2px 2px black;
+            width: 100%;
+            user-select: none;
+            font-size: 1.5rem;
+        }
+        #progress{
+            background-color: darkorange;
+            height: 60px;
+            border-radius: 12px;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="myWrap">
+            <canvas id="canvas">
+    
+            </canvas>
+    </div>
+
+    <div class="swipe">
+        <!-- <div id="progress"></div>
+        <span class="text">滑动图形来解开验证</span>
+        <div id="scrollBall"></div> -->
+    </div>
+    <!-- <input type="range" id="scrollBall" min="0" max="100" step="1" value="0"> -->
+    </section>
+
+    <script>
+    // use jquery to select dom element
+    var initlist = new DomSelect($('.swipe')) //the scroll wrap DOM element
+    var MYcanvas = new initCanvas({canvasWrap:$('.myWrap'), canvas:$('#canvas')}) //the Object keys can't change,value need jquery to selected
+    
+    MYcanvas.init() // draw canvas 
+
+    </script>
+
+</body>
+</html>
